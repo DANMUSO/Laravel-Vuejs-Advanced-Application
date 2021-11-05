@@ -786,8 +786,8 @@
         },
 
         created() {
-            this.loadOrders();/* 
-            setInterval(() => this.loadOrders(), 10000); */
+            this.loadOrders();
+            setInterval(() => this.loadOrders(), 10000); 
         }, 
         mounted(){
 

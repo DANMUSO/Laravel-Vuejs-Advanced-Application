@@ -217,8 +217,8 @@
         },
 
         created() {
-            this.loadVendors();/* 
-            setInterval(() => this.loadVendors(), 4000);   */
+            this.loadVendors();
+            setInterval(() => this.loadVendors(), 10000); 
         },
         mounted(){
              

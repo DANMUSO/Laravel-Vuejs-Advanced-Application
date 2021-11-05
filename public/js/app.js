@@ -3311,9 +3311,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
     }
   },
   created: function created() {
+    var _this11 = this;
+
     this.loadOrders();
-    /* 
-    setInterval(() => this.loadOrders(), 10000); */
+    setInterval(function () {
+      return _this11.loadOrders();
+    }, 10000);
   }
 }, "mounted", function mounted() {}));
 
@@ -4389,9 +4392,12 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   created: function created() {
+    var _this4 = this;
+
     this.loadVendors();
-    /* 
-    setInterval(() => this.loadVendors(), 4000);   */
+    setInterval(function () {
+      return _this4.loadVendors();
+    }, 10000);
   },
   mounted: function mounted() {
     //Image preview
