@@ -30,19 +30,19 @@ window.toast = toast;
 Vue.use(VueRouter);
 
 let routes = [
-    { path: '/dashboard', component: require('./components/admin/Dashboard.vue').default },
-    { path: '/product', component: require('./components/admin/Product.vue').default},
-    { path: '/vendors', component: require('./components/Admin/Vendor.vue').default},
-    { path: '/assignedorders', component: require('./components/Admin/AssignedOrder.vue').default},
-    { path: '/clients', component: require('./components/Admin/Client.vue').default},
-    { path: '/clientlocation', component: require('./components/Admin/ClientLocation.vue').default},
-    { path: '/orders', component: require('./components/Admin/Order.vue').default},
-    { path: '/payments', component: require('./components/Admin/Payment.vue').default},
-    { path: '/riders', component: require('./components/Admin/Rider.vue').default},
-    { path: '/ridercurrentlocation', component: require('./components/Admin/RidercurrentLocation.vue').default},
-    { path: '/trips', component: require('./components/Admin/Trip.vue').default},
-    { path: '/stocks', component: require('./components/Admin/Stock.vue').default},
-    { path: '/purchaseorders', component: require('./components/Admin/PurchaseOrder.vue').default}
+    { path: '/xoomgasdashboard', component: require('./components/admin/Dashboard.vue').default },
+    { path: '/xoomgasproduct', component: require('./components/admin/Product.vue').default},
+    { path: '/xoomgasvendors', component: require('./components/Admin/Vendor.vue').default},
+    { path: '/xoomgasassignedorders', component: require('./components/Admin/AssignedOrder.vue').default},
+    { path: '/xoomgasclients', component: require('./components/Admin/Client.vue').default},
+    { path: '/xoomgasclientlocation', component: require('./components/Admin/ClientLocation.vue').default},
+    { path: '/xoomgasorders', component: require('./components/Admin/Order.vue').default},
+    { path: '/xoomgaspayments', component: require('./components/Admin/Payment.vue').default},
+    { path: '/xoomgasriders', component: require('./components/Admin/Rider.vue').default},
+    { path: '/xoomgasridercurrentlocation', component: require('./components/Admin/RidercurrentLocation.vue').default},
+    { path: '/xoomgastrips', component: require('./components/Admin/Trip.vue').default},
+    { path: '/xoomgasstocks', component: require('./components/Admin/Stock.vue').default},
+    { path: '/xoomgaspurchaseorders', component: require('./components/Admin/PurchaseOrder.vue').default}
   ];
 
   const router = new VueRouter({

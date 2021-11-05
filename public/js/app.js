@@ -76749,43 +76749,43 @@ var toast = sweetalert2__WEBPACK_IMPORTED_MODULE_2___default.a.mixin({
 window.toast = toast;
 Vue.use(vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]);
 var routes = [{
-  path: '/dashboard',
+  path: '/xoomgasdashboard',
   component: __webpack_require__(/*! ./components/admin/Dashboard.vue */ "./resources/js/components/admin/Dashboard.vue")["default"]
 }, {
-  path: '/product',
+  path: '/xoomgasproduct',
   component: __webpack_require__(/*! ./components/admin/Product.vue */ "./resources/js/components/admin/Product.vue")["default"]
 }, {
-  path: '/vendors',
+  path: '/xoomgasvendors',
   component: __webpack_require__(/*! ./components/Admin/Vendor.vue */ "./resources/js/components/Admin/Vendor.vue")["default"]
 }, {
-  path: '/assignedorders',
+  path: '/xoomgasassignedorders',
   component: __webpack_require__(/*! ./components/Admin/AssignedOrder.vue */ "./resources/js/components/Admin/AssignedOrder.vue")["default"]
 }, {
-  path: '/clients',
+  path: '/xoomgasclients',
   component: __webpack_require__(/*! ./components/Admin/Client.vue */ "./resources/js/components/Admin/Client.vue")["default"]
 }, {
-  path: '/clientlocation',
+  path: '/xoomgasclientlocation',
   component: __webpack_require__(/*! ./components/Admin/ClientLocation.vue */ "./resources/js/components/Admin/ClientLocation.vue")["default"]
 }, {
-  path: '/orders',
+  path: '/xoomgasorders',
   component: __webpack_require__(/*! ./components/Admin/Order.vue */ "./resources/js/components/Admin/Order.vue")["default"]
 }, {
-  path: '/payments',
+  path: '/xoomgaspayments',
   component: __webpack_require__(/*! ./components/Admin/Payment.vue */ "./resources/js/components/Admin/Payment.vue")["default"]
 }, {
-  path: '/riders',
+  path: '/xoomgasriders',
   component: __webpack_require__(/*! ./components/Admin/Rider.vue */ "./resources/js/components/Admin/Rider.vue")["default"]
 }, {
-  path: '/ridercurrentlocation',
+  path: '/xoomgasridercurrentlocation',
   component: __webpack_require__(/*! ./components/Admin/RidercurrentLocation.vue */ "./resources/js/components/Admin/RidercurrentLocation.vue")["default"]
 }, {
-  path: '/trips',
+  path: '/xoomgastrips',
   component: __webpack_require__(/*! ./components/Admin/Trip.vue */ "./resources/js/components/Admin/Trip.vue")["default"]
 }, {
-  path: '/stocks',
+  path: '/xoomgasstocks',
   component: __webpack_require__(/*! ./components/Admin/Stock.vue */ "./resources/js/components/Admin/Stock.vue")["default"]
 }, {
-  path: '/purchaseorders',
+  path: '/xoomgaspurchaseorders',
   component: __webpack_require__(/*! ./components/Admin/PurchaseOrder.vue */ "./resources/js/components/Admin/PurchaseOrder.vue")["default"]
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
@@ -77859,8 +77859,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\wamp64\www\DynamicAPPs\XoomGasAdmin-Dashboard\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\wamp64\www\DynamicAPPs\XoomGasAdmin-Dashboard\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\wamp64\www\Advanced-APPs\XoomGasAdmin-Dashboard-master\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\wamp64\www\Advanced-APPs\XoomGasAdmin-Dashboard-master\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
