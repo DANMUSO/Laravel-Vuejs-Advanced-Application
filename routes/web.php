@@ -79,9 +79,5 @@ Route::any('administrator/reprocess', 'App\Http\Controllers\Administrator\OrderC
 
 Route::any('/administrator/order/{orderId}', function () {
     return view('administrator.order.orders');
-});/* 
-Route::get('/{any}', "App\Http\Controllers\AdministratorController@index")->where('any', '.*');
- */
-/* Route::get('/{vue_routes?}', function () {
-    return view('administrator');
-})->where('vue_routes', '[\/\w\.-]*'); */
+});
+Route::get('/{any}', 'App\Http\Controllers\AdministratorController@index')->where('any', '^(?!api).*$');
