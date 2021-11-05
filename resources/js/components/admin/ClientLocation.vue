@@ -1,19 +1,13 @@
 <template>
     <div class="container">
+        <br><br>
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">Client Location Component</div>
 
                     <div class="card-body">
-                         <form @submit="formSubmit" enctype="multipart/form-data">
-                        <strong>Name:</strong>
-                        <input type="text" class="form-control" v-model="name">
-                        <strong>Image:</strong>
-                        <input type="file" class="form-control" v-on:change="onImageChange">
- 
-                        <button class="btn btn-success">Submit</button>
-                        </form>
+                       
                     </div>
                 </div>
             </div>
