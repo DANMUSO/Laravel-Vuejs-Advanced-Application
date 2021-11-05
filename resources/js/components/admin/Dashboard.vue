@@ -17,7 +17,7 @@
               </span>
              
               <div class="info-box-content" style="margin-left:10%;">
-                <router-link to="/vendors" class="nav-link">
+                <router-link to="/xoomgasvendors" class="nav-link">
                 <span class="info-box-text">Vendors</span>
                 <span class="info-box-number">
                
@@ -40,7 +40,7 @@
               </svg></span>
               
               <div class="info-box-content" style="margin-left:10%;">
-                <router-link to="/product" class="nav-link">
+                <router-link to="/xoomgasproduct" class="nav-link">
                 <span class="info-box-text">Products</span>
                 
                 <span class="info-box-number">
@@ -65,7 +65,7 @@
                 </svg>
                 </span>
               <div class="info-box-content" style="margin-left:10%;">
-                 <router-link to="/assignedorders" class="nav-link">
+                 <router-link to="/xoomgasassignedorders" class="nav-link">
                 <span class="info-box-text">Purchase Orders</span>
                 <span class="info-box-number">{{dashboards.data.purchaseorder}}</span>
                  </router-link>
@@ -85,7 +85,7 @@
               </svg></span>
 
               <div class="info-box-content" style="margin-left:10%;">
-                <router-link to="/riders" class="nav-link">
+                <router-link to="/xoomgasriders" class="nav-link">
                 <span class="info-box-text">Riders</span>
                 <span class="info-box-number">{{dashboards.data.rider}}</span>
                  </router-link>
@@ -103,7 +103,7 @@
               </span>
 
               <div class="info-box-content" style="margin-left:10%;">
-                 <router-link to="/clients" class="nav-link">
+                 <router-link to="/xoomgasclients" class="nav-link">
                 <span class="info-box-text">Clients</span>
                 <span class="info-box-number">{{dashboards.data.user}}</span>
                  </router-link>
@@ -121,7 +121,7 @@
               </svg></span>
 
               <div class="info-box-content" style="margin-left:10%;">
-                 <router-link to="/orders" class="nav-link">
+                 <router-link to="/xoomgasorders" class="nav-link">
                 <span class="info-box-text">Orders</span>
                 <span class="info-box-number">{{dashboards.data.order}}</span>
                  </router-link>

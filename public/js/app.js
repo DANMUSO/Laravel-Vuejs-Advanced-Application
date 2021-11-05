@@ -55456,7 +55456,10 @@ var render = function() {
                   [
                     _c(
                       "router-link",
-                      { staticClass: "nav-link", attrs: { to: "/vendors" } },
+                      {
+                        staticClass: "nav-link",
+                        attrs: { to: "/xoomgasvendors" }
+                      },
                       [
                         _c("span", { staticClass: "info-box-text" }, [
                           _vm._v("Vendors")
@@ -55517,7 +55520,10 @@ var render = function() {
                   [
                     _c(
                       "router-link",
-                      { staticClass: "nav-link", attrs: { to: "/product" } },
+                      {
+                        staticClass: "nav-link",
+                        attrs: { to: "/xoomgasproduct" }
+                      },
                       [
                         _c("span", { staticClass: "info-box-text" }, [
                           _vm._v("Products")
@@ -55579,7 +55585,7 @@ var render = function() {
                       "router-link",
                       {
                         staticClass: "nav-link",
-                        attrs: { to: "/assignedorders" }
+                        attrs: { to: "/xoomgasassignedorders" }
                       },
                       [
                         _c("span", { staticClass: "info-box-text" }, [
@@ -55641,7 +55647,10 @@ var render = function() {
                   [
                     _c(
                       "router-link",
-                      { staticClass: "nav-link", attrs: { to: "/riders" } },
+                      {
+                        staticClass: "nav-link",
+                        attrs: { to: "/xoomgasriders" }
+                      },
                       [
                         _c("span", { staticClass: "info-box-text" }, [
                           _vm._v("Riders")
@@ -55671,7 +55680,10 @@ var render = function() {
                   [
                     _c(
                       "router-link",
-                      { staticClass: "nav-link", attrs: { to: "/clients" } },
+                      {
+                        staticClass: "nav-link",
+                        attrs: { to: "/xoomgasclients" }
+                      },
                       [
                         _c("span", { staticClass: "info-box-text" }, [
                           _vm._v("Clients")
@@ -55734,7 +55746,10 @@ var render = function() {
                   [
                     _c(
                       "router-link",
-                      { staticClass: "nav-link", attrs: { to: "/orders" } },
+                      {
+                        staticClass: "nav-link",
+                        attrs: { to: "/xoomgasorders" }
+                      },
                       [
                         _c("span", { staticClass: "info-box-text" }, [
                           _vm._v("Orders")
