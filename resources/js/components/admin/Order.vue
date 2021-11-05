@@ -116,6 +116,7 @@
                             </div>
                             </div>
                             <div class="modal-body">
+                            <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
@@ -136,7 +137,7 @@
                                     </tr>
                                 </tbody>
                                 </table>
-                        
+                            </div>
                             </div>
                             <div class="modal-footer">
                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -257,6 +258,7 @@
                                     </div>
 
                             </div>
+                            <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
@@ -277,6 +279,7 @@
                                     </tr>
                                 </tbody>
                                 </table>
+                                </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -358,6 +361,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
+                            <div class="table-responsive">
                             <table class="table table-striped">
                                 <thead>
                                 <tr>
@@ -378,6 +382,7 @@
                                     </tr>
                                 </tbody>
                                 </table>
+                                </div>
                                  <div class="x_title" style="background-color:#C71585; color:#fff; border: 2px solid red;padding: 6px;border-radius: 30px 20px; heigth:10px;">
                                         <center><h5>You can complete this order if rider encounter any issue in scanning QR Code.</h5>
                                         
@@ -471,6 +476,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
+                            <div class="table-responsive">
                          <table class="table table-striped">
                                 <thead>
                                 <tr>
@@ -491,6 +497,7 @@
                                     </tr>
                                 </tbody>
                                 </table>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -573,6 +580,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
+                            <div class="table-responsive">
                          <table class="table table-striped">
                                 <thead>
                                 <tr>
@@ -593,6 +601,7 @@
                                     </tr>
                                 </tbody>
                                 </table>
+                            </div>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

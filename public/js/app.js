@@ -3147,6 +3147,15 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = (_defineProperty({
   mounted: function mounted() {
     console.log('Component mounted.');
@@ -50681,70 +50690,95 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("div", { staticClass: "modal-body" }, [
                                     _c(
-                                      "table",
-                                      { staticClass: "table table-striped" },
+                                      "div",
+                                      { staticClass: "table-responsive" },
                                       [
-                                        _vm._m(2),
-                                        _vm._v(" "),
                                         _c(
-                                          "tbody",
-                                          _vm._l(_vm.failedorder, function(fd) {
-                                            return _c("tr", { key: fd.id }, [
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.order_id)),
-                                                _c("br")
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _c("img", {
-                                                  attrs: {
-                                                    src: fd.products.image,
-                                                    width: "100%"
-                                                  }
-                                                })
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.product_id))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    fd.products.product_name
-                                                  )
+                                          "table",
+                                          {
+                                            staticClass: "table table-striped"
+                                          },
+                                          [
+                                            _vm._m(2),
+                                            _vm._v(" "),
+                                            _c(
+                                              "tbody",
+                                              _vm._l(_vm.failedorder, function(
+                                                fd
+                                              ) {
+                                                return _c(
+                                                  "tr",
+                                                  { key: fd.id },
+                                                  [
+                                                    _c("td", [
+                                                      _vm._v(
+                                                        _vm._s(fd.order_id)
+                                                      ),
+                                                      _c("br")
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("td", [
+                                                      _c("img", {
+                                                        attrs: {
+                                                          src:
+                                                            fd.products.image,
+                                                          width: "100%"
+                                                        }
+                                                      })
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("td", [
+                                                      _vm._v(
+                                                        _vm._s(fd.product_id)
+                                                      )
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("td", [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          fd.products
+                                                            .product_name
+                                                        )
+                                                      )
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("td", [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          fd.products
+                                                            .product_brand
+                                                        )
+                                                      )
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("td", [
+                                                      _vm._v(
+                                                        _vm._s(fd.units_order)
+                                                      )
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("td", [
+                                                      _vm._v(
+                                                        _vm._s(fd.total_price)
+                                                      )
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("td", [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm._f("moment")(
+                                                            fd.created_at,
+                                                            "MMMM Do YYYY [at] hh:mm"
+                                                          )
+                                                        )
+                                                      )
+                                                    ])
+                                                  ]
                                                 )
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    fd.products.product_brand
-                                                  )
-                                                )
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.units_order))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.total_price))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    _vm._f("moment")(
-                                                      fd.created_at,
-                                                      "MMMM Do YYYY [at] hh:mm"
-                                                    )
-                                                  )
-                                                )
-                                              ])
-                                            ])
-                                          }),
-                                          0
+                                              }),
+                                              0
+                                            )
+                                          ]
                                         )
                                       ]
                                     )
@@ -51194,72 +51228,96 @@ var render = function() {
                                     ]),
                                     _vm._v(" "),
                                     _c(
-                                      "table",
-                                      { staticClass: "table table-striped" },
+                                      "div",
+                                      { staticClass: "table-responsive" },
                                       [
-                                        _vm._m(6),
-                                        _vm._v(" "),
                                         _c(
-                                          "tbody",
-                                          _vm._l(_vm.confirmedorder, function(
-                                            fd
-                                          ) {
-                                            return _c("tr", { key: fd.id }, [
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.order_id)),
-                                                _c("br")
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _c("img", {
-                                                  attrs: {
-                                                    src: fd.products.image,
-                                                    width: "100%"
-                                                  }
-                                                })
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.product_id))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    fd.products.product_name
+                                          "table",
+                                          {
+                                            staticClass: "table table-striped"
+                                          },
+                                          [
+                                            _vm._m(6),
+                                            _vm._v(" "),
+                                            _c(
+                                              "tbody",
+                                              _vm._l(
+                                                _vm.confirmedorder,
+                                                function(fd) {
+                                                  return _c(
+                                                    "tr",
+                                                    { key: fd.id },
+                                                    [
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(fd.order_id)
+                                                        ),
+                                                        _c("br")
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _c("img", {
+                                                          attrs: {
+                                                            src:
+                                                              fd.products.image,
+                                                            width: "100%"
+                                                          }
+                                                        })
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(fd.product_id)
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            fd.products
+                                                              .product_name
+                                                          )
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            fd.products
+                                                              .product_brand
+                                                          )
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(fd.units_order)
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(fd.total_price)
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            _vm._f("moment")(
+                                                              fd.created_at,
+                                                              "MMMM Do YYYY [at] hh:mm"
+                                                            )
+                                                          )
+                                                        )
+                                                      ])
+                                                    ]
                                                   )
-                                                )
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    fd.products.product_brand
-                                                  )
-                                                )
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.units_order))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.total_price))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    _vm._f("moment")(
-                                                      fd.created_at,
-                                                      "MMMM Do YYYY [at] hh:mm"
-                                                    )
-                                                  )
-                                                )
-                                              ])
-                                            ])
-                                          }),
-                                          0
+                                                }
+                                              ),
+                                              0
+                                            )
+                                          ]
                                         )
                                       ]
                                     )
@@ -51456,72 +51514,95 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("div", { staticClass: "modal-body" }, [
                                     _c(
-                                      "table",
-                                      { staticClass: "table table-striped" },
+                                      "div",
+                                      { staticClass: "table-responsive" },
                                       [
-                                        _vm._m(10),
-                                        _vm._v(" "),
                                         _c(
-                                          "tbody",
-                                          _vm._l(_vm.transitorder, function(
-                                            fd
-                                          ) {
-                                            return _c("tr", { key: fd.id }, [
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.order_id)),
-                                                _c("br")
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _c("img", {
-                                                  attrs: {
-                                                    src: fd.products.image,
-                                                    width: "100%"
-                                                  }
-                                                })
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.product_id))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    fd.products.product_name
-                                                  )
+                                          "table",
+                                          {
+                                            staticClass: "table table-striped"
+                                          },
+                                          [
+                                            _vm._m(10),
+                                            _vm._v(" "),
+                                            _c(
+                                              "tbody",
+                                              _vm._l(_vm.transitorder, function(
+                                                fd
+                                              ) {
+                                                return _c(
+                                                  "tr",
+                                                  { key: fd.id },
+                                                  [
+                                                    _c("td", [
+                                                      _vm._v(
+                                                        _vm._s(fd.order_id)
+                                                      ),
+                                                      _c("br")
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("td", [
+                                                      _c("img", {
+                                                        attrs: {
+                                                          src:
+                                                            fd.products.image,
+                                                          width: "100%"
+                                                        }
+                                                      })
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("td", [
+                                                      _vm._v(
+                                                        _vm._s(fd.product_id)
+                                                      )
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("td", [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          fd.products
+                                                            .product_name
+                                                        )
+                                                      )
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("td", [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          fd.products
+                                                            .product_brand
+                                                        )
+                                                      )
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("td", [
+                                                      _vm._v(
+                                                        _vm._s(fd.units_order)
+                                                      )
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("td", [
+                                                      _vm._v(
+                                                        _vm._s(fd.total_price)
+                                                      )
+                                                    ]),
+                                                    _vm._v(" "),
+                                                    _c("td", [
+                                                      _vm._v(
+                                                        _vm._s(
+                                                          _vm._f("moment")(
+                                                            fd.created_at,
+                                                            "MMMM Do YYYY [at] hh:mm"
+                                                          )
+                                                        )
+                                                      )
+                                                    ])
+                                                  ]
                                                 )
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    fd.products.product_brand
-                                                  )
-                                                )
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.units_order))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.total_price))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    _vm._f("moment")(
-                                                      fd.created_at,
-                                                      "MMMM Do YYYY [at] hh:mm"
-                                                    )
-                                                  )
-                                                )
-                                              ])
-                                            ])
-                                          }),
-                                          0
+                                              }),
+                                              0
+                                            )
+                                          ]
                                         )
                                       ]
                                     ),
@@ -51783,72 +51864,96 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("div", { staticClass: "modal-body" }, [
                                     _c(
-                                      "table",
-                                      { staticClass: "table table-striped" },
+                                      "div",
+                                      { staticClass: "table-responsive" },
                                       [
-                                        _vm._m(14),
-                                        _vm._v(" "),
                                         _c(
-                                          "tbody",
-                                          _vm._l(_vm.completedorder, function(
-                                            fd
-                                          ) {
-                                            return _c("tr", { key: fd.id }, [
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.order_id)),
-                                                _c("br")
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _c("img", {
-                                                  attrs: {
-                                                    src: fd.products.image,
-                                                    width: "100%"
-                                                  }
-                                                })
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.product_id))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    fd.products.product_name
+                                          "table",
+                                          {
+                                            staticClass: "table table-striped"
+                                          },
+                                          [
+                                            _vm._m(14),
+                                            _vm._v(" "),
+                                            _c(
+                                              "tbody",
+                                              _vm._l(
+                                                _vm.completedorder,
+                                                function(fd) {
+                                                  return _c(
+                                                    "tr",
+                                                    { key: fd.id },
+                                                    [
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(fd.order_id)
+                                                        ),
+                                                        _c("br")
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _c("img", {
+                                                          attrs: {
+                                                            src:
+                                                              fd.products.image,
+                                                            width: "100%"
+                                                          }
+                                                        })
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(fd.product_id)
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            fd.products
+                                                              .product_name
+                                                          )
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            fd.products
+                                                              .product_brand
+                                                          )
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(fd.units_order)
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(fd.total_price)
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            _vm._f("moment")(
+                                                              fd.created_at,
+                                                              "MMMM Do YYYY [at] hh:mm"
+                                                            )
+                                                          )
+                                                        )
+                                                      ])
+                                                    ]
                                                   )
-                                                )
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    fd.products.product_brand
-                                                  )
-                                                )
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.units_order))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.total_price))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    _vm._f("moment")(
-                                                      fd.created_at,
-                                                      "MMMM Do YYYY [at] hh:mm"
-                                                    )
-                                                  )
-                                                )
-                                              ])
-                                            ])
-                                          }),
-                                          0
+                                                }
+                                              ),
+                                              0
+                                            )
+                                          ]
                                         )
                                       ]
                                     )
@@ -52045,72 +52150,96 @@ var render = function() {
                                   _vm._v(" "),
                                   _c("div", { staticClass: "modal-body" }, [
                                     _c(
-                                      "table",
-                                      { staticClass: "table table-striped" },
+                                      "div",
+                                      { staticClass: "table-responsive" },
                                       [
-                                        _vm._m(18),
-                                        _vm._v(" "),
                                         _c(
-                                          "tbody",
-                                          _vm._l(_vm.cancelledorder, function(
-                                            fd
-                                          ) {
-                                            return _c("tr", { key: fd.id }, [
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.order_id)),
-                                                _c("br")
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _c("img", {
-                                                  attrs: {
-                                                    src: fd.products.image,
-                                                    width: "100%"
-                                                  }
-                                                })
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.product_id))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    fd.products.product_name
+                                          "table",
+                                          {
+                                            staticClass: "table table-striped"
+                                          },
+                                          [
+                                            _vm._m(18),
+                                            _vm._v(" "),
+                                            _c(
+                                              "tbody",
+                                              _vm._l(
+                                                _vm.cancelledorder,
+                                                function(fd) {
+                                                  return _c(
+                                                    "tr",
+                                                    { key: fd.id },
+                                                    [
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(fd.order_id)
+                                                        ),
+                                                        _c("br")
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _c("img", {
+                                                          attrs: {
+                                                            src:
+                                                              fd.products.image,
+                                                            width: "100%"
+                                                          }
+                                                        })
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(fd.product_id)
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            fd.products
+                                                              .product_name
+                                                          )
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            fd.products
+                                                              .product_brand
+                                                          )
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(fd.units_order)
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(fd.total_price)
+                                                        )
+                                                      ]),
+                                                      _vm._v(" "),
+                                                      _c("td", [
+                                                        _vm._v(
+                                                          _vm._s(
+                                                            _vm._f("moment")(
+                                                              fd.created_at,
+                                                              "MMMM Do YYYY [at] hh:mm"
+                                                            )
+                                                          )
+                                                        )
+                                                      ])
+                                                    ]
                                                   )
-                                                )
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    fd.products.product_brand
-                                                  )
-                                                )
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.units_order))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(_vm._s(fd.total_price))
-                                              ]),
-                                              _vm._v(" "),
-                                              _c("td", [
-                                                _vm._v(
-                                                  _vm._s(
-                                                    _vm._f("moment")(
-                                                      fd.created_at,
-                                                      "MMMM Do YYYY [at] hh:mm"
-                                                    )
-                                                  )
-                                                )
-                                              ])
-                                            ])
-                                          }),
-                                          0
+                                                }
+                                              ),
+                                              0
+                                            )
+                                          ]
                                         )
                                       ]
                                     )
