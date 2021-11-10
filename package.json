@@ -35,6 +35,8 @@
         "laravel-vue-pagination": "^2.3.1",
         "sweetalert2": "^11.1.9",
         "vform": "^2.1.1",
-        "vue-moment": "^4.1.0"
+        "vue-moment": "^4.1.0",
+        "vue2-google-maps": "^0.10.7",
+        "vuejs-google-maps": "^0.2.0"
     }
 }

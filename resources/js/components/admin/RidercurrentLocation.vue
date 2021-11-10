@@ -4,10 +4,24 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Rider Current Location Component</div>
+                    <div class="card-header">Client Location Component</div>
 
                     <div class="card-body">
-                    
+                       <GmapMap
+  :center="{lat:1.2921, lng:36.8219}"
+  :zoom="7"
+  map-type-id="terrain"
+  style="width: 100%; height: 400px"
+>
+  <GmapMarker
+    :key="index"
+    v-for="(m, index) in markers"
+    :position="m.position"
+    :clickable="true"
+    :draggable="true"
+    @click="center=m.position"
+  />
+</GmapMap>
                     </div>
                 </div>
             </div>
@@ -22,35 +36,11 @@
         },
         data() {
             return {
-              name: '',
-              image: '',
-              success: ''
+              markers:[]
             };
         },
         methods: {
-            onImageChange(e){
-                console.log(e.target.files[0]);
-                this.image = e.target.files[0];
-            },
-            formSubmit(e) {
-                e.preventDefault();
-                let currentObj = this;
- 
-                const config = {
-                    headers: { 'content-type': 'multipart/form-data' }
-                }
- 
-                let formData = new FormData();
-                formData.append('image', this.image);
- 
-                axios.post('api/v1/vendors', formData, config)
-                .then(function (response) {
-                    currentObj.success = response.data.success;
-                })
-                .catch(function (error) {
-                    currentObj.output = error;
-                });
-            }
+
         }
     }
 </script>
