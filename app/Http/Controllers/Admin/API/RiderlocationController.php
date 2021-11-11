@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Currentlocation;
+use App\Models\Location;
 use DB;
 class RiderlocationController extends Controller
 {
@@ -19,7 +20,10 @@ class RiderlocationController extends Controller
      */
     public function index()
     {
-        return Currentlocation::paginate(100);
+        $response = Location::select('latitude','longitude')->get();
+        return response()->json([
+            'data'=> $response
+           ], 200);
     }
 
     /**

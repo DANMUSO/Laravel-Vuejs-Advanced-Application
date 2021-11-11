@@ -2564,37 +2564,54 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
   },
   data: function data() {
     return {
-      name: '',
-      image: '',
-      success: ''
+      center: {
+        lat: -1.2589350000000001,
+        lng: 36.77535
+      },
+      markers: []
     };
   },
   methods: {
-    onImageChange: function onImageChange(e) {
-      console.log(e.target.files[0]);
-      this.image = e.target.files[0];
-    },
-    formSubmit: function formSubmit(e) {
-      e.preventDefault();
-      var currentObj = this;
-      var config = {
-        headers: {
-          'content-type': 'multipart/form-data'
-        }
-      };
-      var formData = new FormData();
-      formData.append('image', this.image);
-      axios.post('api/v1/vendors', formData, config).then(function (response) {
-        currentObj.success = response.data.success;
-      })["catch"](function (error) {
-        currentObj.output = error;
+    geolocate: function geolocate() {
+      var _this = this;
+
+      navigator.geolocation.getCurrentPosition(function (position) {
+        _this.center = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
       });
+      this.markers = [{
+        lat: -1.2589350000000001,
+        lng: 36.77535,
+        label: 'Surat'
+      }, {
+        lat: -1.2589350000000001,
+        lng: 36.77535,
+        label: 'Surat'
+      }, {
+        lat: -1.2589350000000001,
+        lng: 36.77535,
+        label: 'Surat'
+      }];
     }
   }
 });
@@ -4541,37 +4558,63 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  },
+  name: "MapMarker",
   data: function data() {
     return {
-      name: '',
-      image: '',
-      success: ''
+      center: {
+        lat: -1.2589350000000001,
+        lng: 36.77535
+      },
+      locations: [],
+      currentLoc: null
     };
   },
+  mounted: function mounted() {
+    this.addLocations();
+  },
   methods: {
-    onImageChange: function onImageChange(e) {
-      console.log(e.target.files[0]);
-      this.image = e.target.files[0];
+    setPlace: function setPlace(loc) {
+      this.currentLoc = loc;
     },
-    formSubmit: function formSubmit(e) {
-      e.preventDefault();
-      var currentObj = this;
-      var config = {
-        headers: {
-          'content-type': 'multipart/form-data'
-        }
-      };
-      var formData = new FormData();
-      formData.append('image', this.image);
-      axios.post('api/v1/vendors', formData, config).then(function (response) {
-        currentObj.success = response.data.success;
-      })["catch"](function (error) {
-        currentObj.output = error;
+    addLocations: function addLocations() {
+      var _this = this;
+
+      navigator.geolocation.getCurrentPosition(function (geo) {
+        _this.center = {
+          lat: geo.coords.latitude,
+          lng: geo.coords.longitude
+        };
       });
+      axios.get('api/v1/ridersmap').then(function (_ref) {
+        var data = _ref.data;
+        return _this.locations = data.data;
+      });
+      this.locations = [{
+        lat: -1.264298427318318,
+        lng: 36.7412082105875,
+        label: 'France'
+      }, {
+        lat: -1.2537397790136646,
+        lng: 36.70070920139552,
+        label: 'Sri Lanka'
+      }, {
+        lat: -1.284126111733027,
+        lng: 36.82036992162466,
+        label: 'Canada'
+      }];
     }
   }
 });
@@ -51295,31 +51338,49 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("br"),
-      _c("br"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Client Location Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" })
-          ])
+  return _c("div", { staticClass: "container" }, [
+    _c("br"),
+    _c("br"),
+    _vm._v(" "),
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _vm._v("Client Location Component")
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            [
+              _c(
+                "gmap-map",
+                {
+                  staticStyle: { width: "100%", height: "400px" },
+                  attrs: { center: _vm.center, zoom: 12 }
+                },
+                _vm._l(_vm.markers, function(m, index) {
+                  return _c("gmap-marker", {
+                    key: index,
+                    attrs: { position: m },
+                    on: {
+                      click: function($event) {
+                        _vm.center = m
+                      }
+                    }
+                  })
+                }),
+                1
+              )
+            ],
+            1
+          )
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -56720,31 +56781,49 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "container" }, [
-      _c("br"),
-      _c("br"),
-      _vm._v(" "),
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-12" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Client Location Component")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "card-body" })
-          ])
+  return _c("div", { staticClass: "container" }, [
+    _c("br"),
+    _c("br"),
+    _vm._v(" "),
+    _c("div", { staticClass: "row justify-content-center" }, [
+      _c("div", { staticClass: "col-md-12" }, [
+        _c("div", { staticClass: "card" }, [
+          _c("div", { staticClass: "card-header" }, [
+            _vm._v("Riders Locations " + _vm._s(_vm.locations))
+          ]),
+          _vm._v(" "),
+          _c(
+            "div",
+            { staticClass: "card-body" },
+            [
+              _c(
+                "gmap-map",
+                {
+                  staticStyle: { width: "100%", height: "600px" },
+                  attrs: { zoom: 11, center: _vm.center }
+                },
+                _vm._l(_vm.locations, function(gmap, i) {
+                  return _c("gmap-marker", {
+                    key: i,
+                    attrs: { position: gmap },
+                    on: {
+                      click: function($event) {
+                        _vm.center = gmap
+                      }
+                    }
+                  })
+                }),
+                1
+              )
+            ],
+            1
+          )
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -81123,15 +81202,14 @@ __webpack_require__.r(__webpack_exports__);
 /*!****************************************************************!*\
   !*** ./resources/js/components/admin/RidercurrentLocation.vue ***!
   \****************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _RidercurrentLocation_vue_vue_type_template_id_f2100c02___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./RidercurrentLocation.vue?vue&type=template&id=f2100c02& */ "./resources/js/components/admin/RidercurrentLocation.vue?vue&type=template&id=f2100c02&");
 /* harmony import */ var _RidercurrentLocation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./RidercurrentLocation.vue?vue&type=script&lang=js& */ "./resources/js/components/admin/RidercurrentLocation.vue?vue&type=script&lang=js&");
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _RidercurrentLocation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__) if(["default"].indexOf(__WEBPACK_IMPORT_KEY__) < 0) (function(key) { __webpack_require__.d(__webpack_exports__, key, function() { return _RidercurrentLocation_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__[key]; }) }(__WEBPACK_IMPORT_KEY__));
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
 
 
 
@@ -81161,7 +81239,7 @@ component.options.__file = "resources/js/components/admin/RidercurrentLocation.v
 /*!*****************************************************************************************!*\
   !*** ./resources/js/components/admin/RidercurrentLocation.vue?vue&type=script&lang=js& ***!
   \*****************************************************************************************/
-/*! no static exports found */
+/*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";

@@ -7,6 +7,18 @@
                     <div class="card-header">Client Location Component</div>
 
                     <div class="card-body">
+                        <gmap-map
+                    :center="center"
+                    :zoom="12"
+                    style="width:100%;  height: 400px;"
+                    >
+                    <gmap-marker
+                        :key="index"
+                        v-for="(m, index) in markers"
+                        :position="m"
+                        @click="center=m"
+                    ></gmap-marker>
+                        </gmap-map>
                        
                     </div>
                 </div>
@@ -22,35 +34,36 @@
         },
         data() {
             return {
-              name: '',
-              image: '',
-              success: ''
+              center: { lat:-1.2589350000000001, lng:36.77535 },
+              markers: [],
             };
         },
-        methods: {
-            onImageChange(e){
-                console.log(e.target.files[0]);
-                this.image = e.target.files[0];
-            },
-            formSubmit(e) {
-                e.preventDefault();
-                let currentObj = this;
- 
-                const config = {
-                    headers: { 'content-type': 'multipart/form-data' }
-                }
- 
-                let formData = new FormData();
-                formData.append('image', this.image);
- 
-                axios.post('api/v1/vendors', formData, config)
-                .then(function (response) {
-                    currentObj.success = response.data.success;
-                })
-                .catch(function (error) {
-                    currentObj.output = error;
-                });
-            }
+        methods: {    
+     geolocate: function() {
+        navigator.geolocation.getCurrentPosition(position => {
+          this.center = {
+            lat: position.coords.latitude,
+            lng: position.coords.longitude
+          };
+        });
+        this.markers = [
+          {
+              lat: -1.2589350000000001,
+              lng: 36.77535,
+              label: 'Surat'
+          },
+          {
+              lat: -1.2589350000000001,
+              lng: 36.77535,
+              label: 'Surat'
+          },
+          {
+             lat: -1.2589350000000001,
+              lng: 36.77535,
+              label: 'Surat'
+          }
+      ];
+    }
         }
     }
 </script>
