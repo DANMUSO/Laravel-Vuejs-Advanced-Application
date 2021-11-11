@@ -51355,7 +51355,7 @@ var render = function() {
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header" }, [
-            _vm._v("Riders Locations ")
+            _vm._v("Clients Locations ")
           ]),
           _vm._v(" "),
           _c(
@@ -56798,7 +56798,7 @@ var render = function() {
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header" }, [
-            _vm._v("Riders Locations " + _vm._s(_vm.locations))
+            _vm._v("Riders Locations")
           ]),
           _vm._v(" "),
           _c(

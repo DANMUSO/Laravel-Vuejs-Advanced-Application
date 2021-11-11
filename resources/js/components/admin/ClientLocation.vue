@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">Riders Locations </div>
+                    <div class="card-header">Clients Locations </div>
                         
                     <div class="card-body">
                <gmap-map
