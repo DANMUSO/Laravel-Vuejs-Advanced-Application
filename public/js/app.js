@@ -4541,30 +4541,39 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     console.log('Component mounted.');
   },
   data: function data() {
     return {
-      markers: []
+      name: '',
+      image: '',
+      success: ''
     };
   },
-  methods: {}
+  methods: {
+    onImageChange: function onImageChange(e) {
+      console.log(e.target.files[0]);
+      this.image = e.target.files[0];
+    },
+    formSubmit: function formSubmit(e) {
+      e.preventDefault();
+      var currentObj = this;
+      var config = {
+        headers: {
+          'content-type': 'multipart/form-data'
+        }
+      };
+      var formData = new FormData();
+      formData.append('image', this.image);
+      axios.post('api/v1/vendors', formData, config).then(function (response) {
+        currentObj.success = response.data.success;
+      })["catch"](function (error) {
+        currentObj.output = error;
+      });
+    }
+  }
 });
 
 /***/ }),
@@ -56711,57 +56720,31 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "container" }, [
-    _c("br"),
-    _c("br"),
-    _vm._v(" "),
-    _c("div", { staticClass: "row justify-content-center" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("div", { staticClass: "card" }, [
-          _c("div", { staticClass: "card-header" }, [
-            _vm._v("Client Location Component")
-          ]),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "card-body" },
-            [
-              _c(
-                "GmapMap",
-                {
-                  staticStyle: { width: "100%", height: "400px" },
-                  attrs: {
-                    center: { lat: 1.2921, lng: 36.8219 },
-                    zoom: 7,
-                    "map-type-id": "terrain"
-                  }
-                },
-                _vm._l(_vm.markers, function(m, index) {
-                  return _c("GmapMarker", {
-                    key: index,
-                    attrs: {
-                      position: m.position,
-                      clickable: true,
-                      draggable: true
-                    },
-                    on: {
-                      click: function($event) {
-                        _vm.center = m.position
-                      }
-                    }
-                  })
-                }),
-                1
-              )
-            ],
-            1
-          )
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "container" }, [
+      _c("br"),
+      _c("br"),
+      _vm._v(" "),
+      _c("div", { staticClass: "row justify-content-center" }, [
+        _c("div", { staticClass: "col-md-12" }, [
+          _c("div", { staticClass: "card" }, [
+            _c("div", { staticClass: "card-header" }, [
+              _vm._v("Client Location Component")
+            ]),
+            _vm._v(" "),
+            _c("div", { staticClass: "card-body" })
+          ])
         ])
       ])
     ])
-  ])
-}
-var staticRenderFns = []
+  }
+]
 render._withStripped = true
 
 

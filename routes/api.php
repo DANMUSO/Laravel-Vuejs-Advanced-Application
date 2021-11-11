@@ -37,6 +37,7 @@ Route::apiResources([
     '/v1/vendors' => 'App\Http\Controllers\Admin\API\VendorsController',
     '/v1/products' => 'App\Http\Controllers\Admin\API\ProductsController',
     '/v1/riders' => 'App\Http\Controllers\Admin\API\RidersController',
+    '/v1/ridersmap' => 'App\Http\Controllers\Admin\API\RiderlocationController',
     '/v1/assignedorders' => 'App\Http\Controllers\Admin\API\AssignedordersController',
     '/v1/trips' => 'App\Http\Controllers\Admin\API\TripsController',
     '/v1/clients' => 'App\Http\Controllers\Admin\API\ClientsController',

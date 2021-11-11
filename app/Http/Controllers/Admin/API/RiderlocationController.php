@@ -4,7 +4,8 @@ namespace App\Http\Controllers\Admin\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
+use App\Models\Currentlocation;
+use DB;
 class RiderlocationController extends Controller
 {
     public function __construct()
@@ -18,7 +19,7 @@ class RiderlocationController extends Controller
      */
     public function index()
     {
-        //
+        return Currentlocation::paginate(100);
     }
 
     /**
