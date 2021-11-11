@@ -2577,40 +2577,49 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  mounted: function mounted() {
-    console.log('Component mounted.');
-  },
+  name: "MapMarker",
   data: function data() {
     return {
       center: {
         lat: -1.2589350000000001,
         lng: 36.77535
       },
-      markers: []
+      locations: [],
+      currentLoc: null
     };
   },
+  mounted: function mounted() {
+    this.addLocations();
+  },
   methods: {
-    geolocate: function geolocate() {
+    setPlace: function setPlace(loc) {
+      this.currentLoc = loc;
+    },
+    addLocations: function addLocations() {
       var _this = this;
 
-      navigator.geolocation.getCurrentPosition(function (position) {
+      navigator.geolocation.getCurrentPosition(function (geo) {
         _this.center = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude
+          lat: geo.coords.latitude,
+          lng: geo.coords.longitude
         };
       });
-      this.markers = [{
-        lat: -1.2589350000000001,
-        lng: 36.77535,
-        label: 'Surat'
+      axios.get('api/v1/ridersmap').then(function (_ref) {
+        var data = _ref.data;
+        return _this.locations = data.data;
+      });
+      this.locations = [{
+        lat: -1.264298427318318,
+        lng: 36.7412082105875,
+        label: 'France'
       }, {
-        lat: -1.2589350000000001,
-        lng: 36.77535,
-        label: 'Surat'
+        lat: -1.2537397790136646,
+        lng: 36.70070920139552,
+        label: 'Sri Lanka'
       }, {
-        lat: -1.2589350000000001,
-        lng: 36.77535,
-        label: 'Surat'
+        lat: -1.284126111733027,
+        lng: 36.82036992162466,
+        label: 'Canada'
       }];
     }
   }
@@ -51346,7 +51355,7 @@ var render = function() {
       _c("div", { staticClass: "col-md-12" }, [
         _c("div", { staticClass: "card" }, [
           _c("div", { staticClass: "card-header" }, [
-            _vm._v("Client Location Component")
+            _vm._v("Riders Locations ")
           ]),
           _vm._v(" "),
           _c(
@@ -51356,16 +51365,16 @@ var render = function() {
               _c(
                 "gmap-map",
                 {
-                  staticStyle: { width: "100%", height: "400px" },
-                  attrs: { center: _vm.center, zoom: 12 }
+                  staticStyle: { width: "100%", height: "600px" },
+                  attrs: { zoom: 11, center: _vm.center }
                 },
-                _vm._l(_vm.markers, function(m, index) {
+                _vm._l(_vm.locations, function(gmap, i) {
                   return _c("gmap-marker", {
-                    key: index,
-                    attrs: { position: m },
+                    key: i,
+                    attrs: { position: gmap },
                     on: {
                       click: function($event) {
-                        _vm.center = m
+                        _vm.center = gmap
                       }
                     }
                   })
