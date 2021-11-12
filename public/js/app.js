@@ -4609,21 +4609,20 @@ __webpack_require__.r(__webpack_exports__);
       });
       axios.get('api/v1/ridersmap').then(function (_ref) {
         var data = _ref.data;
-        return _this.locations = data.data;
+        return _this.locations = [{
+          lat: -1.264298427318318,
+          lng: 36.7412082105875,
+          label: 'France'
+        }, {
+          lat: -1.2537397790136646,
+          lng: 36.70070920139552,
+          label: 'Sri Lanka'
+        }, {
+          lat: -1.284126111733027,
+          lng: 36.82036992162466,
+          label: 'Canada'
+        }];
       });
-      this.locations = [{
-        lat: -1.264298427318318,
-        lng: 36.7412082105875,
-        label: 'France'
-      }, {
-        lat: -1.2537397790136646,
-        lng: 36.70070920139552,
-        label: 'Sri Lanka'
-      }, {
-        lat: -1.284126111733027,
-        lng: 36.82036992162466,
-        label: 'Canada'
-      }];
     }
   }
 });

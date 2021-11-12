@@ -54,9 +54,7 @@
                 };
                 });
                 
-              axios.get('api/v1/ridersmap').then( ({ data }) => (this.locations = data.data))
-            
-         
+              axios.get('api/v1/ridersmap').then( ({ data }) => (
                 this.locations = [
                 {
                     lat: -1.264298427318318,
@@ -73,8 +71,9 @@
                     lng: 36.82036992162466,
                     label: 'Canada'
                 }
-            ];
-        
+            ]
+                  ))
+            
             }
         }
     };
