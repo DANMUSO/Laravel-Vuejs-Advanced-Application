@@ -20,10 +20,13 @@ class RiderlocationController extends Controller
      */
     public function index()
     {
-        $response = Location::select('latitude','longitude')->get();
-        return response()->json([
-            'data'=> $response
-           ], 200);
+        $response = Location::select('latitude','longitude')->take(1)->get();
+        
+        function json_decode_add_quotes_to_keys($response) {                      
+            $response = preg_replace('/(\w+):/i', '"\1":', $response);                   
+            return $response;                                        
+        } 
+      
     }
 
     /**
