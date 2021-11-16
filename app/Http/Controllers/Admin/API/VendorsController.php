@@ -23,6 +23,19 @@ class VendorsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function deactivate(Request $request, $vendor_id){
+        
+        $vendor = Vendor::find($vendor_id);
+        $vendor -> status = 1;
+        $vendor->update();  
+      
+      }
+      public function activate(Request $request, $vendor_id){
+        $vendor = Vendor::find($vendor_id);
+        $vendor -> status = 0;
+        $vendor->update();  
+        
+      }
     public function getdata(){
         try{
         return view('administrator');
@@ -41,18 +54,20 @@ class VendorsController extends Controller
     public function index()
     {
  
-        try{
-        return Vendor::latest()->paginate(100);
-        } catch (\Throwable $e) {
-        $log = new ErrorLog();
-        $log-> error_file   = ($e->getFile());
-        $log-> error_message    = ($e->getMessage());
-        $log-> error_line   = ($e->getLine());
-        $log-> error_trace  = $e->getTraceAsString();
-        $log->save();
-        $error = config('app.error_exception');
-        return view('errors.error', compact('error'));
-        }
+        $no = Vendor::where('status', 0)->count();
+        $no1 = Vendor::where('status', 1)->count();
+        $vendors = Vendor::where('status',config('app.status_1'))->get();
+        $vendors_d = Vendor::where('status',config('app.status'))->get();
+        $response['no'] = $no;
+        $response['no1'] = $no1;
+        $responses['vendors'] = $vendors;
+        $responses['vendors_d'] = $vendors_d;
+
+        return response()->json([
+            'data'=> $responses,
+            'number' => $response,
+           ], 200);
+        
        
     }
 

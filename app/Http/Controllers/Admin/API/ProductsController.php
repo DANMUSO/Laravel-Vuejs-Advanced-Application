@@ -23,13 +23,39 @@ class ProductsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function deactivate(Request $request, $product_id){
+        
+        $product = Product::find($product_id);
+        $product -> status = 1;
+        $product->update();  
+      
+      }
+      public function activate(Request $request, $product_id){
+       
+        $product = Product::find($product_id);
+        $product -> status = 0;
+        $product->update();  
+        
+      }
     public function index()
     {
         try{
-        $prod = Product::latest()->get();
+        $no = Product::where('status', config('app.status_1'))->count();
+        $no1 = Product::where('status', config('app.status'))->count();
+        $products = Product::where('status', config('app.status_1'))->orderBy('product_type', 'DESC')
+            ->orderBy('product_brand', 'ASC')
+            ->orderBy('unit_price', 'ASC')
+            ->get();
+        $products_d = Product::where('status', config('app.status'))->orderBy('product_type', 'DESC')
+            ->orderBy('product_brand', 'ASC')
+            ->orderBy('unit_price', 'ASC')
+            ->get();
         $vendor = Vendor::latest()->get();
         return response()->json([
-            'data'=> $prod,
+            'no' => $no,
+            'no1' => $no1,
+            'data'=> $products,
+            'products_d' => $products_d,
             'vendor' =>$vendor
            ], 200);
         } catch (\Throwable $e) {

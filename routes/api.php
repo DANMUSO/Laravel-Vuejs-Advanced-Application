@@ -20,6 +20,10 @@ Route::put('/orders/{order_id}','App\Http\Controllers\OrdersController@UpdateOrd
 
 Route::middleware('auth:api')->post('/orders/{order_id}/pay','App\Http\Controllers\Administrator\OrdersController@pay');
 
+Route::middleware('auth:api')->get('/v1/vendoractive/{vendor_id}','App\Http\Controllers\Admin\API\VendorsController@activate');
+Route::middleware('auth:api')->get('/v1/productdeactive/{product_id}','App\Http\Controllers\Admin\API\ProductsController@deactivate');
+Route::middleware('auth:api')->get('/v1/productactive/{product_id}','App\Http\Controllers\Admin\API\ProductsController@activate');
+Route::middleware('auth:api')->get('/v1/vendordeactive/{vendor_id}','App\Http\Controllers\Admin\API\VendorsController@deactivate');
 Route::middleware('auth:api')->get('/v1/failedorder/{order_id}','App\Http\Controllers\Admin\API\OrdersController@failedorder');
 Route::middleware('auth:api')->get('/v1/confirmedorder/{order_id}', 'App\Http\Controllers\Admin\API\OrdersController@confirmedorder');
 Route::middleware('auth:api')->get('/v1/transitorder/{order_id}' , 'App\Http\Controllers\Admin\API\OrdersController@transitorder');

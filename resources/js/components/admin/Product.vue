@@ -3,14 +3,152 @@
         <br><br>
        <div class="row " >
           <div class="col-12">
-            <div class="card  card card-primary card-outline" >
-              <div class="card-header">
-                <h5 class="card-title">List of Products</h5>
+            <div class="col-12 col-sm-12">
 
-                 <div class="card-tools">
+               <div class="row">
+            <div class="col-12 col-sm-10"><h5 class="card-title">List of Products</h5></div>
+            <div class="col-12 col-sm-2">
+             
                       <button class="btn btn-success" @click="newModal">
                       Add Product  <i class="fas fa-plus"></i>
                       </button>
+            </div>
+             
+                  
+            </div>
+             <br>
+
+            <div class="card card-primary card-outline card-tabs">
+              <div class="card-header p-0 pt-1 border-bottom-0">
+                <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="custom-tabs-three-active-tab" data-toggle="pill" href="#custom-tabs-three-active" role="tab" aria-controls="custom-tabs-three-active" aria-selected="true">Active Products  <b style="color:green">{{no}}</b></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-three-inactive-tab" data-toggle="pill" href="#custom-tabs-three-inactive" role="tab" aria-controls="custom-tabs-three-inactive" aria-selected="false">Inactive Products  <b style="color:green">{{no1}}</b></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="custom-tabs-three-tabContent">
+                  <div class="tab-pane fade show active" id="custom-tabs-three-active" role="tabpanel" aria-labelledby="custom-tabs-three-active-tab">
+                  
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                 
+                  <thead>
+                    <tr>
+                    <th>Product ID</th>
+                    <th>Product Image</th>
+                    <th>Product Name</th>
+                    <th>Product Status</th>
+                    <th>Product Brand</th>
+                    <th>Product Size</th>
+                    <th>Product Type</th>
+                    <th>Unit Price</th>
+                    <th>Selling Price</th>
+                    <th>Reorder Level</th>
+                    <th>Created at</th>
+                    <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                     <tr v-for="product in products" :key="product.id">
+                      <td>{{ product.product_id}}</td>
+                      <td><img v-bind:src="product.image" width="100%"/></td>
+                      <td>{{ product.product_name}}</td>
+                      <td>{{ product.refill_new}}</td>
+                      <td>{{ product.product_brand}}</td>
+                      <td>{{ product.product_size}}</td>
+                      <td>{{ product.product_type}}</td>
+                      <td>{{ product.unit_price}}</td>
+                      <td>{{ product.selling_price}}</td>
+                      <td>{{ product.reorder_level}}</td>
+                      <td>{{ product.created_at | moment("MMMM Do YYYY [at] hh:mm") }}</td>
+                      <td>
+                        <button type="button" class="btn btn-primary" @click="editModal(product)" aria-label="Left Align">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                    </svg>
+                    </button>
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-success" @click="Deactivate(product.product_id)" aria-label="Left Align">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                    </svg>
+                    </button>
+                    </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+                  </div>
+                  <div class="tab-pane fade" id="custom-tabs-three-inactive" role="tabpanel" aria-labelledby="custom-tabs-three-inactive-tab">
+                  
+              <div class="card-body table-responsive p-0">
+                <table class="table table-hover text-nowrap">
+                 
+                  <thead>
+                    <tr>
+                    <th>Product ID</th>
+                    <th>Product Image</th>
+                    <th>Product Name</th>
+                    <th>Product Status</th>
+                    <th>Product Brand</th>
+                    <th>Product Size</th>
+                    <th>Product Type</th>
+                    <th>Unit Price</th>
+                    <th>Selling Price</th>
+                    <th>Reorder Level</th>
+                    <th>Created at</th>
+                    <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                     <tr v-for="product in products_d" :key="product.id">
+                      <td>{{ product.product_id}}</td>
+                      <td><img v-bind:src="product.image" width="100%"/></td>
+                      <td>{{ product.product_name}}</td>
+                      <td>{{ product.refill_new}}</td>
+                      <td>{{ product.product_brand}}</td>
+                      <td>{{ product.product_size}}</td>
+                      <td>{{ product.product_type}}</td>
+                      <td>{{ product.unit_price}}</td>
+                      <td>{{ product.selling_price}}</td>
+                      <td>{{ product.reorder_level}}</td>
+                      <td>{{ product.created_at | moment("MMMM Do YYYY [at] hh:mm") }}</td>
+                      <td><button type="button" class="btn btn-primary" @click="editModal(product)" aria-label="Left Align">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                    </svg>
+                    </button>
+                    <br>
+                    <br>
+                    <button type="button" class="btn btn-success" @click="Activate(product.product_id)" aria-label="Left Align">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                    </svg>
+                    </button>
+                    </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+                  </div>
+                 
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+            <div class="card  card card-primary card-outline" >
+              <div class="card-header">
+                 <div class="card-tools">
                       
         <!-- Modal -->
        
@@ -114,51 +252,6 @@
               </div>
               <!-- /.card-header -->
               
-              <div class="card-body table-responsive p-0">
-                <table class="table table-hover text-nowrap">
-                 
-                  <thead>
-                    <tr>
-                    <th>Product ID</th>
-                    <th>Product Image</th>
-                    <th>Product Name</th>
-                    <th>Product Status</th>
-                    <th>Product Brand</th>
-                    <th>Product Size</th>
-                    <th>Product Type</th>
-                    <th>Unit Price</th>
-                    <th>Selling Price</th>
-                    <th>Reorder Level</th>
-                    <th>Created at</th>
-                    <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                     <tr v-for="product in products" :key="product.id">
-                      <td>{{ product.product_id}}</td>
-                      <td><img v-bind:src="product.image" width="100%"/></td>
-                      <td>{{ product.product_name}}</td>
-                      <td>{{ product.refill_new}}</td>
-                      <td>{{ product.product_brand}}</td>
-                      <td>{{ product.product_size}}</td>
-                      <td>{{ product.product_type}}</td>
-                      <td>{{ product.unit_price}}</td>
-                      <td>{{ product.selling_price}}</td>
-                      <td>{{ product.reorder_level}}</td>
-                      <td>{{ product.created_at | moment("MMMM Do YYYY [at] hh:mm") }}</td>
-                      <td><button type="button" class="btn btn-primary" @click="editModal(product)" aria-label="Left Align">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
-                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
-                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
-                    </svg>
-                    </button></td>
-                    </tr>
-                  </tbody>
-                </table>
-                <div>
-                  
-                </div>
-              </div>
               <!-- /.card-body -->
             </div>
             <!-- /.card -->
@@ -176,6 +269,9 @@
                 editmode: false,
                 products: {},
                 vendors: {},
+                products_d: {},
+                no: {},
+                no1: {},
                 form: new Form({
                     product_id: '',
                     product_name: '',
@@ -210,6 +306,58 @@
                       }
                 })
             },
+
+            Activate(product_id)
+            {
+                swal.fire({
+                title: 'Are you sure?',
+                text: "You want to deactive this product!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, deactive it!'
+                }).then((result) => {
+                   
+                if (result.isConfirmed) {
+                    axios.get('api/v1/productactive/'+product_id).then(({ data }) =>{
+                      this.transit = data.data,
+                      toast.fire({
+                          icon: 'success',
+                          title: 'Product deactived succesfully!'
+                      })
+                      
+                  });
+                }
+                })
+                  
+            },
+            Deactivate(product_id)
+            {
+              
+                swal.fire({
+                title: 'Are you sure?',
+                text: "You want to active this product!",
+                icon: 'success',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, active it!'
+                }).then((result) => {
+                   
+                if (result.isConfirmed) {
+                    axios.get('api/v1/productdeactive/'+product_id).then(({ data }) =>{
+                      this.transit = data.data,
+                      toast.fire({
+                          icon: 'success',
+                          title: 'Product actived succesfully!'
+                      })
+                      
+                  });
+                }
+                })
+                  
+            },
             editModal(product){
               this.editmode = true;
               this.form.reset();
@@ -224,7 +372,10 @@
             loadProducts(){
                   axios.get('api/v1/products').then( ({ data }) => (
                     this.products = data.data,
-                    this.vendors = data.vendor
+                    this.vendors = data.vendor,
+                    this.products_d = data.products_d,
+                    this.no = data.no,
+                    this.no1 = data.no1
                     ))
             },
             addProduct(){
@@ -259,8 +410,8 @@
         },
 
         created() {
-            this.loadProducts();/* 
-            setInterval(() => this.loadProducts(), 4000); */
+            this.loadProducts();
+            setInterval(() => this.loadProducts(), 10000);
         },
 
         mounted(){

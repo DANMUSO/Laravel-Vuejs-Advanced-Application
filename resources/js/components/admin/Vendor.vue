@@ -2,15 +2,37 @@
     <div class="container">
         <br>
        <div class="row " >
-          <div class="col-12">
-            <div class="card  card card-primary card-outline" >
-              <div class="card-header">
-                <h5 class="card-title">List of Vendors</h5>
-
-                 <div class="card-tools">
-                      <button class="btn btn-success" @click="newModal">
+         <div class="col-12 col-sm-12">
+            <div class="row">
+            <div class="col-12 col-sm-10"><h5 class="card-title">List of Vendors</h5></div>
+            <div class="col-12 col-sm-2"><button class="btn btn-success" @click="newModal">
                       Add Vendor  <i class="fas fa-plus"></i>
-                      </button>
+                      </button></div>
+             
+                  
+            </div>
+             <br>
+            <div class="card card-primary card-outline card-tabs">
+
+
+              <div class="card-header p-0 pt-1 border-bottom-0">
+                <ul class="nav nav-tabs" id="custom-tabs-three-tab" role="tablist">
+                  <li class="nav-item">
+                    <a class="nav-link active" id="custom-tabs-three-active-tab" data-toggle="pill" href="#custom-tabs-three-active" role="tab" aria-controls="custom-tabs-three-active" aria-selected="true">Active Vendors  <b style="color:green">{{number.no}}</b></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" id="custom-tabs-three-inactive-tab" data-toggle="pill" href="#custom-tabs-three-inactive" role="tab" aria-controls="custom-tabs-three-inactive" aria-selected="false">Inactive Vendors <b style="color:green">{{number.no1}}</b></a>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="custom-tabs-three-tabContent">
+                  <div class="tab-pane fade show active" id="custom-tabs-three-active" role="tabpanel" aria-labelledby="custom-tabs-three-active-tab">
+                    <div class="card  card card-primary card-outline" >
+              <div class="card-header">
+              
+                 <div class="card-tools">
+                   
                       
         <!-- Modal -->
        
@@ -101,7 +123,7 @@
                     </tr>
                   </thead>
                   <tbody>
-                     <tr v-for="vendor in vendors" :key="vendor.id">
+                     <tr v-for="vendor in vendors.vendors" :key="vendor.id">
                       <td style="width:25px">{{ vendor.vendor_id}}</td>
                       <td style="width:25px"><img v-bind:src="vendor.image" width="100%"/></td>
                       <td style="width:25px">{{ vendor.vendor_name}}</td>
@@ -111,7 +133,9 @@
                       <td style="width:25px">{{ vendor.email}}</td>
                       <td style="width:25px"><a v-bind:href="vendor.doc" target="_blank" download="Brochure">Download Contract</a></td>
                       <td style="width:25px">{{ vendor.created_at | moment("MMMM Do YYYY [at] hh:mm") }}</td>
-                      <td><button type="button" class="btn btn-primary" @click="editModal(vendor)" aria-label="Left Align">
+                      <td>
+                        
+                        <button type="button" class="btn btn-warning" @click="deactivate(vendor.vendor_id)" aria-label="Left Align">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                     <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                     <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
@@ -126,7 +150,56 @@
               </div>
               <!-- /.card-body -->
             </div>
-            <!-- /.card -->
+                  </div>
+                  <div class="tab-pane fade" id="custom-tabs-three-inactive" role="tabpanel" aria-labelledby="custom-tabs-three-inactive-tab">
+                  <div class="card-body table-responsive p-0">
+                  <table class="table table-hover text-nowrap">
+                  <thead>
+                    <tr>
+                    <th>Vendor <br>ID</th>
+                    <th>Vendor <br> Photo</th>
+                    <th>Vendor's <br> Name</th>
+                    <th>Physical <br> Address</th>
+                    <th>Contact <br> person Phone</th>
+                    <th>Contact <br> Person</th>
+                    <th>Contact <br> person Email</th>
+                    <th>Contract <br> Document</th>
+                    <th>Created at</th>
+                    <th>Action</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                     <tr v-for="vendor in vendors.vendors_d" :key="vendor.id">
+                      <td style="width:25px">{{ vendor.vendor_id}}</td>
+                      <td style="width:25px"><img v-bind:src="vendor.image" width="100%"/></td>
+                      <td style="width:25px">{{ vendor.vendor_name}}</td>
+                      <td class="size">{{ vendor.vendor_address}}</td>
+                      <td style="width:25px">{{ vendor.phone}}</td>
+                      <td style="width:25px">{{ vendor.person}}</td>
+                      <td style="width:25px">{{ vendor.email}}</td>
+                      <td style="width:25px"><a v-bind:href="vendor.doc" target="_blank" download="Brochure">Download Contract</a></td>
+                      <td style="width:25px">{{ vendor.created_at | moment("MMMM Do YYYY [at] hh:mm") }}</td>
+                      <td>
+                        <button type="button" class="btn btn-success" @click="Activate(vendor.vendor_id)" aria-label="Left Align">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
+                    <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+                    <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
+                    </svg>
+                    </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                </div>
+                  </div>
+
+                </div>
+              </div>
+              <!-- /.card -->
+            </div>
+          </div>
+          <div class="col-12">
+          
           </div>
         </div>
     </div>
@@ -138,6 +211,7 @@
             return {
                 editmode: false,
                 vendors: {},
+                number: {},
                 form: new Form({
                     vendor_id: '',
                     vendor_name: '',
@@ -166,6 +240,58 @@
 
               })
             },
+            Activate(vendor_id)
+            {
+                swal.fire({
+                title: 'Are you sure?',
+                text: "You want to deactive this vendor!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, deactive it!'
+                }).then((result) => {
+                   
+                if (result.isConfirmed) {
+                    axios.get('api/v1/vendoractive/'+vendor_id).then(({ data }) =>{
+                      this.transit = data.data,
+                      toast.fire({
+                          icon: 'success',
+                          title: 'Vendor deactived succesfully!'
+                      })
+                      
+                  });
+                }
+                })
+                  
+            },
+            deactivate(vendor_id)
+            {
+              
+                swal.fire({
+                title: 'Are you sure?',
+                text: "You want to active this vendor!",
+                icon: 'success',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, active it!'
+                }).then((result) => {
+                   
+                if (result.isConfirmed) {
+                  console.log(vendor_id);
+                    axios.get('api/v1/vendordeactive/'+vendor_id).then(({ data }) =>{
+                      this.transit = data.data,
+                      toast.fire({
+                          icon: 'success',
+                          title: 'Vendor actived succesfully!'
+                      })
+                      
+                  });
+                }
+                })
+                  
+            },
             editModal(vendor){
               this.editmode = true;
               this.form.reset();
@@ -178,7 +304,10 @@
               $('#newModal').modal('show');
             },
             loadVendors(){
-                  axios.get('api/v1/vendors').then( ({ data }) => (this.vendors = data.data))
+                  axios.get('api/v1/vendors').then( ({ data }) => (
+                    this.vendors = data.data,
+                    this.number = data.number
+                    ))
             
             },
             addVendor(){
